@@ -1,0 +1,11 @@
+## Interface: 120000
+## Title: Charge Bar Colors
+## Notes: Customize the colors of charge bars for various class abilities (Warrior Whirlwind, Evoker Essence, DK Runes, etc.)
+## Author: YourName
+## Version: 1.0.0
+## SavedVariablesPerCharacter: ChargeBarColorsDB
+## OptionalDeps: LibSharedMedia-3.0, LibStub
+
+Core.lua
+Options.lua
+
