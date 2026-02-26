@@ -161,7 +161,11 @@ local function GetEssenceBurstStacks()
         end
         return count
     end
-    return next(ebOverlaySpells) and 1 or 0
+    -- Only use overlay as fallback for Essence Burst spell itself; other Evoker overlays (Deep Breath, Time Spiral, etc.) must not show the effect
+    if ebOverlaySpells[ESSENCE_BURST_SPELL_ID] then
+        return 1
+    end
+    return 0
 end
 
 ------------------------------------------------------------
@@ -1002,8 +1006,8 @@ CBC:SetScript("OnEvent", function(self, event, arg1, arg2, arg3)
         if arg1 == "player" then UpdateBar() end
 
     elseif event == "SPELL_ACTIVATION_OVERLAY_GLOW_SHOW" then
-        local _, playerClass = UnitClass("player")
-        if playerClass == "EVOKER" then
+        -- Only track Essence Burst overlay; other Evoker spells (Deep Breath, Time Spiral, etc.) must not trigger glow/marching ants
+        if arg1 == ESSENCE_BURST_SPELL_ID then
             ebOverlaySpells[arg1] = true
         end
 
