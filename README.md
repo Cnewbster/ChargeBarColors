@@ -78,3 +78,7 @@ This addon hooks into WoW's charge bar system and modifies the colors of various
 - World of Warcraft Retail (Interface version 100105)
 - Requires a compatible WoW client
 
+## Shout Out
+
+Thanks to Smallscales for helping me test almost everything I've done with the evoker side of this addon!
+Also thanks to Sensei for his repo on his current resource manager for how to help use the Warrior WW buffs.
